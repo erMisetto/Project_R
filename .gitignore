@@ -1,0 +1,56 @@
+# R Shiny App - Security .gitignore
+
+# Environment files containing secrets
+.Renviron
+.env
+config.yml
+
+# API keys and sensitive configuration
+*_api_key*
+*secret*
+*password*
+*groq*
+*GROQ*
+
+# R specific
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+*.Rproj
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*~
+
+# Log files
+*.log
+
+# Package installation files
+packrat/lib*/
+renv/library/
+
+# Shiny deployment
+rsconnect/
+
+# IDE files
+.vscode/
+.idea/
+
+# Output files that might contain sensitive data
+output/
+cache/
+temp/
+
+# Local configuration overrides
+local_config.*
+dev_config.*
+
+# Any backup files that might contain secrets
+*.bak
+*.backup
