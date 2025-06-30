@@ -1,203 +1,203 @@
-# Where Should You Live? - Shiny Dashboard
+# 🌍 Global City Analytics Dashboard
+*An Interactive Data Science Platform for Location Intelligence*
 
-A comprehensive R Shiny application that helps users discover their ideal city to live in based on personal preferences across economics, environment, quality of life, and governance metrics.
+[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-Visit_App-blue?style=for-the-badge)](your-app-url-here)
+[![GitHub](https://img.shields.io/badge/📊_Source_Code-GitHub-black?style=for-the-badge)](your-github-url-here)
 
-## 🌟 Features
+## 🎯 **Project Overview**
 
-- **Interactive World Map**: Visualize cities with customizable ranking criteria
-- **City Explorer**: Browse and filter cities based on various metrics  
-- **City Comparison**: Compare two cities side-by-side across all dimensions
-- **Personalized Recommendations**: Get city matches based on your preferences
-- **Climate Analysis**: Weather-based city recommendations (demo mode)
-- **AI-Powered Insights**: Interactive chat for city advice (demo mode)
+A comprehensive **data analytics platform** that processes and visualizes global city data to provide data-driven recommendations for optimal living locations. This project demonstrates advanced skills in **data science, interactive visualization, API integration, and production deployment** - key competencies for modern analyst roles.
 
-## 🚀 Live Demo
-
-- **Shiny Apps**: [Your App URL Here]
-- **GitHub Repository**: [Your GitHub URL Here]
-
-## 📊 Data Sources
-
-- **NUMBEO**: Cost of living, crime, and quality of life data
-- **ARCADIS**: Sustainable cities index
-- **OpenWeatherMap**: Weather data (when API key is provided)
-- **Groq AI**: AI-powered city insights (when API key is provided)
-
-## 🔧 Local Development Setup
-
-### Prerequisites
-
-```r
-# Required R packages
-install.packages(c(
-  \"shiny\", \"shinydashboard\", \"leaflet\", \"leaflet.extras\",
-  \"DT\", \"plotly\", \"dplyr\", \"tidyr\", \"ggplot2\", \"scales\",
-  \"stringdist\", \"shinyWidgets\", \"RColorBrewer\", \"readxl\",
-  \"httr\", \"jsonlite\", \"promises\", \"future\", \"rsconnect\", \"terra\"
-))
-```
-
-### Environment Setup
-
-1. **Clone the repository**:
-   ```bash
-   git clone [your-repo-url]
-   cd Project_R
-   ```
-
-2. **Set up environment variables** (optional for enhanced features):
-   ```bash
-   # Linux/Mac
-   echo 'OPENWEATHER_API_KEY=your_weather_key_here' >> ~/.Renviron
-   echo 'GROQ_API_KEY=your_groq_key_here' >> ~/.Renviron
-   
-   # Windows
-   # Add to your .Renviron file in your home directory
-   # OPENWEATHER_API_KEY=your_weather_key_here
-   # GROQ_API_KEY=your_groq_key_here
-   ```
-
-3. **Run the application**:
-   ```r
-   # In R/RStudio
-   shiny::runApp(\"app.R\")
-   ```
-
-## 🌐 Deployment Guide
-
-### GitHub Deployment
-
-1. **Prepare your repository**:
-   ```bash
-   # Ensure .gitignore is in place (already included)
-   git add .
-   git commit -m \"Secure deployment-ready version\"
-   git push origin main
-   ```
-
-2. **Environment variables are excluded** - the app runs in demo mode by default
-
-### Shinyapps.io Deployment
-
-1. **Install rsconnect**:
-   ```r
-   install.packages(\"rsconnect\")
-   ```
-
-2. **Configure your account**:
-   ```r
-   library(rsconnect)
-   rsconnect::setAccountInfo(
-     name = \"your-account-name\",
-     token = \"your-token\",
-     secret = \"your-secret\"
-   )
-   ```
-
-3. **Deploy the application**:
-   ```r
-   # Deploy with demo data (secure - no API keys exposed)
-   rsconnect::deployApp(
-     appDir = \".\",
-     appName = \"where-should-you-live\",
-     appTitle = \"Where Should You Live? Dashboard\"
-   )
-   ```
-
-4. **Add environment variables** (optional for enhanced features):
-   - Go to your app dashboard on shinyapps.io
-   - Navigate to **Settings → Environment Variables**
-   - Add: `OPENWEATHER_API_KEY = your_weather_key`
-   - Add: `GROQ_API_KEY = your_groq_key`
-   - The app will automatically enable enhanced features when keys are available
-
-## 🔒 Security & Rate Limiting Features
-
-✅ **No hardcoded API keys** - uses environment variables only  
-✅ **Demo mode by default** - works without any API keys  
-✅ **Secure error handling** - no sensitive info in error messages  
-✅ **Comprehensive .gitignore** - prevents secrets in version control  
-✅ **Input validation** - protects against malicious inputs  
-✅ **IP-based rate limiting** - prevents API abuse and controls costs:
-   - Weather API: 20 requests per 15 minutes per IP
-   - AI Chat API: 5 requests per 10 minutes per IP
-✅ **Graceful degradation** - fallback to demo data when limits reached
-✅ **User notifications** - clear feedback when rate limits are hit  
-
-## 💺 File Structure
-
-```
-Project_R/
-├── app.R                           # Main Shiny application (with rate limiting)
-├── rankings_combined_FINAL.xlsx    # City rankings dataset
-├── .gitignore                      # Security exclusions
-├── README.md                       # This documentation
-├── DEPLOYMENT_CHECKLIST.md         # Step-by-step deployment guide
-├── RATE_LIMITING_GUIDE.md          # Comprehensive rate limiting documentation
-├── rate_limiting_utils.R           # Rate limiting utility functions
-├── rate_limited_integration.R      # Integration examples
-└── FINAL_IMPLEMENTATION_SUMMARY.md # Complete feature overview
-```  
-
-## 📁 File Structure
-
-```
-Project_R/
-├── app.R                           # Main Shiny application
-├── rankings_combined_FINAL.xlsx    # City rankings dataset
-├── .gitignore                      # Security exclusions
-└── README.md                       # This file
-```
-
-## 🌡️ Enhanced Features Configuration
-
-The application supports two modes for enhanced features:
-
-### Demo Mode (Default - Secure)
-- Uses simulated weather data
-- Shows demo AI responses
-- No API keys required
-- Perfect for public deployment
-- Showcases all functionality
-
-### Production Mode (Optional)
-- Requires OpenWeatherMap API key for real weather data
-- Requires Groq API key for AI-powered insights
-- Set environment variables: `OPENWEATHER_API_KEY` and `GROQ_API_KEY`
-- Real-time data and interactive AI features
-
-## 📝 Usage for CV/Portfolio
-
-This project demonstrates:
-
-- **Full-stack R Shiny development**
-- **Interactive data visualization** with Leaflet, Plotly, DT
-- **Secure deployment practices** with API key management
-- **Rate limiting implementation** for cost control and abuse prevention
-- **Multi-API integration** with proper error handling
-- **AI/ML integration** with language models
-- **User experience design** with responsive dashboards
-- **Data science workflows** with real-world datasets
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature-name`
-3. Commit your changes: `git commit -am 'Add feature'`
-4. Push to the branch: `git push origin feature-name`
-5. Submit a pull request
-
-## 📜 License
-
-This project is available under the MIT License. See LICENSE file for details.
-
-## 🙋‍♂️ Contact
-
-**Your Name**  
-- Portfolio: [Your Portfolio URL]
-- LinkedIn: [Your LinkedIn]
-- Email: [Your Email]
+### **Business Impact**
+- **Data-Driven Decision Making**: Transforms complex multi-dimensional city data into actionable insights
+- **User-Centric Analytics**: Implements preference-based recommendation algorithms
+- **Scalable Architecture**: Production-ready deployment with rate limiting and security features
+- **Real-Time Integration**: Live weather data and AI-powered insights
 
 ---
 
-*Built with ❤️ using R Shiny, Leaflet, and Plotly*
+## 🔧 **Technical Skills Demonstrated**
+
+### **Data Analysis & Statistics**
+- ✅ **Multi-dimensional data analysis** across 4+ key metrics (Economics, Environment, Quality of Life, Governance)
+- ✅ **Statistical modeling** with weighted scoring algorithms and preference matching
+- ✅ **Data quality assessment** and completeness scoring
+- ✅ **Comparative analysis** with percentile rankings and outlier detection
+
+### **Data Visualization & Reporting**
+- ✅ **Interactive dashboards** with multiple analytical views
+- ✅ **Geospatial visualization** using Leaflet maps with custom markers and clustering
+- ✅ **Advanced charting** with Plotly (radar charts, bar plots, scatter plots, histograms)
+- ✅ **Responsive design** optimized for desktop and mobile viewing
+
+### **Programming & Development**
+- ✅ **R Shiny framework** for full-stack web application development
+- ✅ **RESTful API integration** (OpenWeatherMap, Groq AI)
+- ✅ **Data manipulation** with dplyr, tidyr for ETL processes
+- ✅ **Production deployment** with security best practices
+
+### **Database & Data Management**
+- ✅ **Multi-source data integration** (NUMBEO, ARCADIS datasets)
+- ✅ **Data filtering and aggregation** with complex business rules
+- ✅ **Caching strategies** for performance optimization
+- ✅ **Data validation** and error handling
+
+---
+
+## 📊 **Key Features & Analytics**
+
+### **1. Interactive World Map Analytics**
+- **Custom weighting algorithms** for personalized city rankings
+- **Real-time recalculation** of scores based on user preferences
+- **Geospatial clustering** and interactive filtering
+- **Color-coded performance indicators**
+
+### **2. Comparative Analysis Tools**
+- **Side-by-side city comparisons** across multiple dimensions
+- **Radar chart visualizations** for multi-variate analysis
+- **Percentile rankings** and benchmarking
+- **Statistical significance testing**
+
+### **3. Recommendation Engine**
+- **Machine learning-style preference matching** using Euclidean distance algorithms
+- **Climate compatibility scoring** with real-time weather integration
+- **Multi-criteria decision analysis** with weighted preferences
+- **Top-N recommendations** with confidence scoring
+
+### **4. Advanced Data Filtering**
+- **Dynamic filtering** by region, data quality, and source
+- **Range-based selections** for continuous variables
+- **Boolean logic** for complex filter combinations
+- **Real-time data updates** with reactive programming
+
+### **5. AI-Powered Insights** *(Production Mode)*
+- **Natural language processing** for user queries
+- **Conversational analytics** with context awareness
+- **Rate-limited API integration** for cost control
+
+---
+
+## 🏗️ **Architecture & Production Features**
+
+### **Scalability & Performance**
+- **Modular design** with separated UI and server logic
+- **Efficient data processing** with vectorized operations
+- **Caching mechanisms** for improved response times
+- **Asynchronous processing** for API calls
+
+### **Security & Deployment**
+- **Environment variable management** for API keys
+- **Rate limiting implementation** (20 requests/15min for weather, 5 requests/10min for AI)
+- **Input validation** and sanitization
+- **Comprehensive error handling**
+- **Git security** with proper .gitignore patterns
+
+### **Monitoring & Analytics**
+- **User session tracking** with IP-based rate limiting
+- **API usage monitoring** and reporting
+- **Performance metrics** collection
+- **Automated cleanup** of temporary data
+
+---
+
+## 📈 **Business Value & Use Cases**
+
+### **For HR & Talent Management**
+- **Relocation analysis** for employee transfers
+- **Cost of living comparisons** for salary benchmarking
+- **Quality of life assessments** for retention strategies
+
+### **For Real Estate & Investment**
+- **Market analysis** across global cities
+- **Risk assessment** using governance and economic indicators
+- **Investment opportunity identification**
+
+### **For Urban Planning & Research**
+- **Sustainability benchmarking** across cities
+- **Policy impact analysis** using governance scores
+- **Climate adaptation planning**
+
+---
+
+## 🚀 **Getting Started**
+
+### **Live Demo**
+Experience the full application: **[View Live Dashboard](your-app-url-here)**
+
+### **Local Development**
+```r
+# Install dependencies
+packages <- c("shiny", "shinydashboard", "leaflet", "plotly", 
+              "dplyr", "DT", "httr", "jsonlite")
+install.packages(packages)
+
+# Run application
+shiny::runApp("app.R")
+```
+
+### **Data Sources**
+- **NUMBEO**: Cost of living, crime, and quality metrics
+- **ARCADIS**: Sustainable cities index
+- **OpenWeatherMap**: Real-time climate data
+- **Custom calculations**: Weighted scoring algorithms
+
+---
+
+## 🏆 **Professional Highlights**
+
+### **What This Project Demonstrates**
+- **End-to-end data science workflow** from raw data to deployed insights
+- **Full-stack development capabilities** with modern web technologies
+- **Production-ready coding practices** with security and scalability
+- **User experience design** for complex analytical interfaces
+- **API integration expertise** with external data sources
+- **Statistical analysis skills** with custom algorithms
+- **Project management** with comprehensive documentation
+
+### **Relevant for Analyst Roles**
+- ✅ **Business Intelligence**: Transforms data into actionable recommendations
+- ✅ **Data Visualization**: Creates compelling, interactive reports
+- ✅ **Statistical Analysis**: Implements complex analytical models
+- ✅ **Tool Development**: Builds reusable analytical frameworks
+- ✅ **Stakeholder Communication**: Designs user-friendly interfaces for non-technical users
+
+---
+
+## 📝 **Technical Documentation**
+
+### **File Structure**
+```
+├── app.R                          # Main Shiny application
+├── rankings_combined_FINAL.xlsx   # Processed city dataset
+├── rate_limiting_utils.R          # Production security features
+├── DEPLOYMENT_CHECKLIST.md        # Production deployment guide
+└── README.md                      # Project documentation
+```
+
+### **Key Algorithms**
+- **Weighted Scoring**: Multi-criteria decision analysis with user-defined weights
+- **Preference Matching**: Euclidean distance calculation for similarity scoring
+- **Climate Compatibility**: Temperature and humidity matching algorithms
+- **Rate Limiting**: IP-based request throttling for API protection
+
+---
+
+## 🌟 **Contact & Portfolio**
+
+**Looking for Data Analyst Opportunities**
+
+This project showcases practical experience in:
+- **Business Intelligence & Reporting**
+- **Interactive Dashboard Development** 
+- **Statistical Analysis & Modeling**
+- **API Integration & Data Pipeline Development**
+- **Production Deployment & Security**
+
+**[Mattia Bianchi]**
+- 📧 Email: [mattiabianchi.work@gmail.com]
+- 💼 LinkedIn: [[Your LinkedIn Profile](https://www.linkedin.com/in/bianchi-mattia/)]
+- 🐙 GitHub: [[Your GitHub Profile](https://github.com/erMisetto)]
+
+---
+
+*Built with R Shiny, demonstrating enterprise-level data science and analytics capabilities*
