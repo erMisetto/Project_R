@@ -21,7 +21,6 @@ library(jsonlite)
 library(promises)
 library(future)
 library(rsconnect)
-library(rlang)  # For null-coalescing operator and other rlang functions
 
 
 # Load the pre-processed data
@@ -847,17 +846,10 @@ server <- function(input, output, session) {
   
   # Get client IP function
   get_client_ip <- function() {
-    # Use standard R conditional logic instead of %||% operator
-    ip <- session$request$HTTP_X_FORWARDED_FOR
-    if (is.null(ip) || is.na(ip) || ip == "") {
-      ip <- session$request$HTTP_X_REAL_IP
-    }
-    if (is.null(ip) || is.na(ip) || ip == "") {
-      ip <- session$request$REMOTE_ADDR
-    }
-    if (is.null(ip) || is.na(ip) || ip == "") {
-      ip <- "unknown"
-    }
+    ip <- session$request$HTTP_X_FORWARDED_FOR %||% 
+          session$request$HTTP_X_REAL_IP %||%
+          session$request$REMOTE_ADDR %||%
+          "unknown"
     if (grepl(",", ip)) ip <- trimws(strsplit(ip, ",")[[1]][1])
     return(ip)
   }
