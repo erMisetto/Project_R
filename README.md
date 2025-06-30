@@ -122,7 +122,7 @@ A comprehensive **data analytics platform** that processes and visualizes global
 ## 🚀 **Getting Started**
 
 ### **Live Demo**
-Experience the full application: **[View Live Dashboard](your-app-url-here)**
+Experience the full application: **[View Live Dashboard]([your-app-url-here](https://bianchi-mattia.shinyapps.io/cities-recommendations-dash/))**
 
 ### **Local Development**
 ```r
