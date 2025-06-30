@@ -195,8 +195,8 @@ This project showcases practical experience in:
 
 **[Mattia Bianchi]**
 - 📧 Email: [mattiabianchi.work@gmail.com]
-- 💼 LinkedIn: [[Your LinkedIn Profile](https://www.linkedin.com/in/bianchi-mattia/)]
-- 🐙 GitHub: [[Your GitHub Profile](https://github.com/erMisetto)]
+- 💼 LinkedIn: [[LinkedIn Profile](https://www.linkedin.com/in/bianchi-mattia/)]
+- 🐙 GitHub: [[GitHub Profile](https://github.com/erMisetto)]
 
 ---
 
