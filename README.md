@@ -1,8 +1,8 @@
 # 🌍 Global City Analytics Dashboard
 *An Interactive Data Science Platform for Location Intelligence*
 
-[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-Visit_App-blue?style=for-the-badge)](your-app-url-here)
-[![GitHub](https://img.shields.io/badge/📊_Source_Code-GitHub-black?style=for-the-badge)](your-github-url-here)
+[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-Visit_App-blue?style=for-the-badge)]([your-app-url-here](https://bianchi-mattia.shinyapps.io/cities-recommendations-dash/))
+[![GitHub](https://img.shields.io/badge/📊_Source_Code-GitHub-black?style=for-the-badge)]([your-github-url-here](https://github.com/erMisetto))
 
 ## 🎯 **Project Overview**
 
